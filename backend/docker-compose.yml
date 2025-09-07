@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DB_HOST=mongo
+      - DB_PORT=27017
+      - DB_NAME=pet_adoption_db
+      - SECRET_KEY=your-secret-key-here-change-in-production
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=pet_adoption_db
+
+volumes:
+  mongo_data:
+  media_volume:

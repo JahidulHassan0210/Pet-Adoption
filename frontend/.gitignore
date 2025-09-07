@@ -1,0 +1,61 @@
+# ---- OS / IDE junk ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.history
+
+# ---- Env files (keep example) ----
+.env
+.env.*
+!.env.example
+
+# =========================
+# Frontend (Next.js / React)
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+frontend/.vite/
+frontend/.vercel/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/coverage/
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+# If you keep envs inside frontend/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# =========================
+# Backend (Django / Python)
+# =========================
+backend/venv/
+backend/.venv/
+backend/env/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.py[cod]
+backend/*.egg-info/
+backend/.eggs/
+backend/pip-wheel-metadata/
+backend/.pytest_cache/
+backend/.coverage*
+backend/coverage/
+
+# DB & collected/static/media (don’t commit real uploads)
+backend/db.sqlite3
+backend/*.sqlite3
+backend/staticfiles/
+backend/media/
+
+# If you keep envs inside backend/
+backend/.env
+backend/.env.*
+!backend/.env.example
